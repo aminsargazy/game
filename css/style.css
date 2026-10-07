@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #080812;
+    color: white;
+    font-family: Arial, sans-serif;
+
+}
+header{
+    width: 100%;
+    padding: 25px 60px;
+
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.logo{
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+}
+.nav-links{
+    display: flex;
+    gap: 35px;
+    list-style: none;
+
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+
+}
+.nav-btn {
+    padding: 12px 24px;
+    background: transparent;
+    color: white;
+    border: 1px solid #8b5cf6;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+.hero {
+    min-height: calc(100vh - 90px);
+    display: flex;
+    align-items: center;
+    padding: 80px 20px;
+    background: 
+    radial-gradient(circle at 80% 50%, rgba(139,92,246,0.25),transparent 35%)
+    linear-gradient(135deg,#080812, #111122);
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+
+}
+.hero-visual{
+    width: 400px;
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game-card{
+    width: 300px;
+    height: 400px;
+
+    border: 1px solid #8b5cf6;
+    border-radius: 20px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(139,92,426,0.25),
+        rgba(20,20,40,0.8)
+    );
+    box-shadow: 
+    0 0 30px rgba(139,92,246 ,0.1 );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+
+    transform: rotate(5deg);
+    
+}
+.game-card:hover{
+    transform: translateY(-10px) rotate(5deg) scale(1.05);
+    animation-play-state: paused;
+    box-shadow: 
+    0 0 40px rgba(139,92,246,0.6),
+    0 0 80px rgba(139,92,246,0.25),
+    inset 0 0 30px rgba(139,92,246,0.15)
+}
+.game-card{
+    animation:cardEnter 1s ease-out , floating 4s ease-in-out infinite 1s ;
+    transition: 
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+@keyframes cardEnter{
+    from{
+        opacity: 0;
+        transform: translateX(100px) rotate(5deg);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0) rotate(5deg);
+    }
+}
+@keyframes floating{
+    0%{
+        transform: translateY(0) rotate(5deg);
+    }
+    50%{
+        transform: translateY(-15px) rotate(5deg);
+
+    }
+    100%{
+        transform: translateY(0) rotate(5deg);
+
+    }
+}
+.geme-card span {
+    color: #8b5cf6;
+    font-size: 14px;
+    letter-spacing: 4px;
+
+}
+.game-card h2{
+    font-size: 55px;
+    line-height: 0.9;
+    margin-top: 20px;
+}
+
+.hero-content{
+    max-width: 900px;
+    margin-left: 0;
+    margin: 0px;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+
+}
+.hero-subtitle{
+    color: #8b5cf6;
+    font-size: 14px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    margin: 0 0 20px 0;
+    
+
+
+}
+.hero h1 {
+    font-size: 90px;
+    line-height: 0.95;
+    letter-spacing: -4px;
+    margin-bottom: 30px;
+    white-space: nowrap;
+    margin-left: 0px;
+    margin: 0 0 25px 0;
+}
+.hero h1 span{
+    color: #8b5cf6;
+
+}
+.hero-descriptain{
+    color: #a1a1aa;
+    font-size: 18px;
+    margin-bottom: 35px;
+    margin: 0 0 35px 0;
+
+}
+.hero-btn{
+    padding: 16px 35px;
+    border: none;
+    border-radius: 8px;
+    background: #8b5cf6;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+.hero-btn:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px #8b5cf666;
+}
+.featured-games{
+    padding: 100px 60px;
+    background: #0b0b16;
+}
+.section-title{
+    margin-bottom: 50px;
+}
+.section-title p {
+    color: #8b5cf6;
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 10px;
+
+}
+.section-title h2 {
+    font-size: 42px;
+    letter-spacing: -1px;
+
+}
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+}
+
+
+.game-item {
+    position: relative;
+    background: #0d0d18;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+
+.game-item:hover {
+    transform: translateY(-10px);
+    border-color: #00aaff;
+    box-shadow: 0 20px 50px rgba(0, 170, 255, 0.18);
+}
+
+
+/* تصویر بازی */
+
+.game-image {
+    position: relative;
+    height: 280px;
+    width: 400px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: flex-end;
+    padding: 25px;
+
+    
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* فعلاً بدون عکس واقعی */
+
+.game-1 {
+    background:
+        linear-gradient(
+            135deg,
+            #071b2d,
+            #123b63,
+            #050509
+        ),;
+    background-size: cover;
+    background-image: url("../assets/images/cyber-strike.png");
+}
+
+.game-2 {
+    background:
+        linear-gradient(
+            135deg,
+            #25103b,
+            #5c237d,
+            #08050d
+        );
+        background-size: cover;
+        background-image: url("../assets/images/night-rush.png");
+}
+
+.game-3 {
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #303030,
+            #050505
+        );
+        background-size: cover;
+        background-image: url("../assets/images/shadow-ops.png");
+}
+
+/* شماره بازی */
+
+.game-number {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+
+    font-size: 42px;
+    font-weight: 800;
+
+    color: rgba(255, 255, 255, 0.12);
+}
+
+
+/* دسته‌بندی */
+
+.game-category {
+    position: relative;
+
+    padding: 7px 12px;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    color: #00aaff;
+    border: 1px solid rgba(0, 170, 255, 0.4);
+}
+
+
+/* اطلاعات */
+
+.game-info {
+    padding: 25px;
+}
+
+
+.game-info h3 {
+    margin: 0 0 10px;
+
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+
+.game-info p {
+    margin: 0 0 20px;
+
+    color: #888;
+    font-size: 14px;
+}
+
+
+.game-info button {
+    background: transparent;
+    border: none;
+
+    color: #00aaff;
+
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.game-info button:hover {
+    color: white;
+    transform: translateX(5px);
+}
+.controller-3d{
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    width: 520px;
+    height: 520px;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+
+}
+#controller-3d {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+/* لایه تاریک روی دسته */
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(8, 8, 18, 0.68);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+#controller-3d canvas {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+}
+
+@media (max-width:900px) {
+    #controller-3d {
+        right: 50%;
+        top: 20%;
+        transform: translate(50%, -50%);
+        width: 380px;
+        height: 380px;
+
+    }
+}
